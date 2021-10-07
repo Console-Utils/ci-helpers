@@ -23,7 +23,7 @@ when merged to \"master\" or \"main\", but now it is \"$GITHUB_HEAD_REF\"" >&2
         fi
     ;;
     *)
-        echo "Base branch must be \"dev\" or \"master\" branch, but now it is \"$GITHUB_BASE_REF\"." >&2
+        echo "Base branch must be \"dev\" or \"master\" or \"main\" branch, but now it is \"$GITHUB_BASE_REF\"." >&2
         exit $WRONG_BRANCH
     ;;
 esac
