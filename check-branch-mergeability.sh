@@ -2,7 +2,7 @@
 
 # Checks whether futher CI jobs can be run by mandating:
 # - only feature/bugfix branches merged to dev
-# - only dev branch merged to master
+# - only dev branch merged to master or main
 
 declare -ir SUCCESS=0
 declare -ir WRONG_BRANCH=1
