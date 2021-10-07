@@ -4,7 +4,7 @@
 
 ## Description
 
-Tools to perform checks for CI.
+Helpers to perform checks for CI.
 
 ## Usage
 
