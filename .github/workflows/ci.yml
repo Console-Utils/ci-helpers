@@ -1,0 +1,25 @@
+name: Continuous Integration
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  shell-lint:
+    runs-on: ubuntu-20.04
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: lint
+        run: |
+          shellcheck *.sh
+
+  markdown-lint:
+    runs-on: ubuntu-20.04
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: lint
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint *.md
