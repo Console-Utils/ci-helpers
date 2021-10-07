@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Checks whether futher CI jobs can be run by mandating:
+# - last version tag existence on last commit
+
 declare -ir SUCCESS=0
 declare -ir NO_TAG_ERROR=1
 
