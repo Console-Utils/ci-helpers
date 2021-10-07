@@ -6,7 +6,7 @@
 declare -ir SUCCESS=0
 declare -ir NO_TAG_ERROR=1
 
-git checkout HEAD
+git checkout -
 
 last_tag=$(git tag | sed -En '/v/p' | sort -r | head -n 1)
 
