@@ -2,11 +2,14 @@
 
 # Checks whether futher CI jobs can be run by mandating:
 # - last version tag existence on last commit
+#
+# Assumptions:
+# - HEAD is now at merge commit create with pull request
 
 declare -ir SUCCESS=0
 declare -ir NO_TAG_ERROR=1
 
-git checkout -
+git checkout HEAD^2
 
 last_tag=$(git tag | sed -En '/v/p' | sort -r | head -n 1)
 
