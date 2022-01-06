@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Checks whether futher CI jobs can be run by mandating:
+# Check whether futher CI jobs can be run by mandating:
 # - only feature/bugfix branches merged to dev
 # - only dev branch merged to master or main
 
