@@ -23,5 +23,5 @@ jobs:
       - name: lint
         run: |
           shopt -s globstar
-          npm install -g markdownlint-cli
+          npm install --global markdownlint-cli
           markdownlint --config configs/config.yml **/*.md
