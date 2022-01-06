@@ -5,6 +5,15 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-mergeability:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: check
+      run: |
+        bash scripts/github_flow/check_mergeability.sh
+
   shell-lint:
     runs-on: ubuntu-20.04
     
