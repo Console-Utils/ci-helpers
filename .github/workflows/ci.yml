@@ -5,23 +5,32 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-mergeability:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: check
+      run: |
+        bash scripts/github_flow/check_mergeability.sh
+
   shell-lint:
     runs-on: ubuntu-20.04
     
     steps:
-      - uses: actions/checkout@v2
-      - name: lint
-        run: |
-          shopt -s globstar
-          shellcheck **/*.sh
+    - uses: actions/checkout@v2
+    - name: lint
+      run: |
+        shopt -s globstar
+        shellcheck **/*.sh
 
   markdown-lint:
     runs-on: ubuntu-20.04
     
     steps:
-      - uses: actions/checkout@v2
-      - name: lint
-        run: |
-          shopt -s globstar
-          npm install --global markdownlint-cli
-          markdownlint --config configs/config.yml **/*.md
+    - uses: actions/checkout@v2
+    - name: lint
+      run: |
+        shopt -s globstar
+        npm install --global markdownlint-cli
+        markdownlint --config configs/config.yml **/*.md
