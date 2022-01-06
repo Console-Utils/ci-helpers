@@ -22,4 +22,4 @@ jobs:
       - name: lint
         run: |
           npm install -g markdownlint-cli
-          markdownlint *.md
+          markdownlint --config configs/config.yml *.md

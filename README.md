@@ -9,3 +9,7 @@ Helpers to perform checks for CI.
 ## Usage
 
 Add this repository as Git submodule.
+
+## Supported environments and examples
+
+Any Git-containing environment is supported. Tested with git 2.25.1.
