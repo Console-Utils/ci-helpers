@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: lint
         run: |
-          shellcheck *.sh
+          shopt -s globstar
+          shellcheck **/*.sh
 
   markdown-lint:
     runs-on: ubuntu-20.04
@@ -21,5 +22,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: lint
         run: |
+          shopt -s globstar
           npm install -g markdownlint-cli
-          markdownlint --config configs/config.yml *.md
+          markdownlint --config configs/config.yml **/*.md
