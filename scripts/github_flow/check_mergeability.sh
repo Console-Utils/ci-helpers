@@ -25,11 +25,11 @@ case "$GITHUB_BASE_REF" in
 to be able merged to 'master' or 'main' with real issue id, but now it is '$GITHUB_HEAD_REF'" >&2
                 exit $WRONG_BRANCH
             fi
-        fi
-
-        echo "Source branch must be 'feature/<number>'|'bugfix/<number>' branch \
+        else
+            echo "Source branch must be 'feature/<number>'|'bugfix/<number>' branch \
 to be able merged merged to 'master' or 'main', but now it is '$GITHUB_HEAD_REF'" >&2
         exit $WRONG_BRANCH
+        fi
     ;;
     *)
         echo "Base branch must be 'master'|'main', but now it is '$GITHUB_BASE_REF'." >&2
