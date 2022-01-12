@@ -25,6 +25,7 @@ case "$GITHUB_BASE_REF" in
             echo issue = "$issue"
             echo http_body = "$http_body"
             echo http_code = "$http_code"
+            echo pull_request = "$(echo "$http_body" | jq '.pull_request')"
 
             if [[ $http_code -ne 200 || $(echo "$http_body" | jq '.pull_request' ) != null ]]; then
                 echo "Source branch must be 'feature/<issue-id>'|'bugfix/<issue-id>' branch \
