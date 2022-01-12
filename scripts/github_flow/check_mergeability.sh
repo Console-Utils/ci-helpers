@@ -20,6 +20,12 @@ case "$GITHUB_BASE_REF" in
             declare http_body=$(echo "$responce" | head --lines -1)
             declare http_code=$(echo "$responce" | tail --lines 1)
 
+            echo owner = "$owner"
+            echo repository = "$repository"
+            echo issue = "$issue"
+            echo http_body = "$http_body"
+            echo http_code = "$http_code"
+
             if [[ $http_code -ne 200 || $(echo "$http_body" | jq '.pull_request' ) != null ]]; then
                 echo "Source branch must be 'feature/<issue-id>'|'bugfix/<issue-id>' branch \
 to be able merged to 'master' or 'main' with real issue id, but now it is '$GITHUB_HEAD_REF'" >&2
