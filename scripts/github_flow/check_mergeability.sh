@@ -16,7 +16,7 @@ case "$GITHUB_BASE_REF" in
             declare issue=${BASH_REMATCH[2]}
             declare responce=$(curl --silent --header "Accept: application/vnd.github.v3+json" \
                 --write-out '%{http_code}' \
-                https://api.github.com/repos/$owner/$repository/issues/$issue)
+                "https://api.github.com/repos/$owner/$repository/issues/$issue")
             declare http_body=$(echo "$responce" | head --lines -1)
             declare http_code=$(echo "$responce" | tail --lines 1)
 
