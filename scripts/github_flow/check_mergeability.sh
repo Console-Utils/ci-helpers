@@ -11,8 +11,8 @@ declare -ir WRONG_BRANCH=1
 case "$GITHUB_BASE_REF" in
     master|main)
         if [[ $GITHUB_HEAD_REF =~ ^(feature|bugfix)/([[:digit:]]+)$ ]]; then
-            declare owner=${GITHUB_REPOSITORY#*/}
-            declare repository=${GITHUB_REPOSITORY%/*}
+            declare owner=${GITHUB_REPOSITORY%/*}
+            declare repository=${GITHUB_REPOSITORY#*/}
             declare issue=${BASH_REMATCH[2]}
             declare responce=$(curl --silent --header "Accept: application/vnd.github.v3+json" \
                 --write-out '%{http_code}' \
