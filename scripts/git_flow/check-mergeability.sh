@@ -2,7 +2,7 @@
 
 # Syntax: check-mergeability
 
-# Check whether branch is feature/bugfix and is merged to main/master OR is
+# Check whether branch is feature/bugfix and is merged to dev OR is
 # dev branch merged to main/master
 
 # shellcheck disable=SC2155
