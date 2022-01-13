@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Check whether futher CI jobs can be run by mandating:
-# - last version tag existence on last commit
+# Syntax: check_tag_existence
+
+# Check whether the last commit is marked with the version tag
 #
 # Assumptions:
 # - HEAD is now at merge commit created by pull request

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Syntax: check_tag_format <tag> {{semantic|other}}
+
 declare -ir success=0
 declare -ir wrong_tag_error=1
 
