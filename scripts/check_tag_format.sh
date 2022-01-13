@@ -20,6 +20,6 @@ if [[ "$tag" =~ $pattern ]]; then
   exit $success
 fi
 
-echo "⛔ Release tag must have $versioning versioning format but not it is '$tag'."
+echo "⛔ Release tag must have $versioning versioning format, but now it is '$tag'."
 exit "$wrong_tag_error"
 
