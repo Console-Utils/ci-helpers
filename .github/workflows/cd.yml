@@ -28,7 +28,7 @@ on:
         default: ci-helpers
 
 jobs:
-  check-mergeability:
+  publish-release:
     runs-on: ubuntu-20.04
 
     steps:
