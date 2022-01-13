@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-declare -ir success="0"
-declare -ir wrong_tag_error="1"
+declare -ir success=0
+declare -ir wrong_tag_error=1
 
 declare tag="$1"
 declare versioning="$2"

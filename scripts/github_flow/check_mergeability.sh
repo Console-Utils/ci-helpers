@@ -5,8 +5,8 @@
 
 # shellcheck disable=SC2155
 
-declare -ir success="0"
-declare -ir wrong_branch_error="1"
+declare -ir success=0
+declare -ir wrong_branch_error=1
 
 case "$GITHUB_BASE_REF" in
     master|main)

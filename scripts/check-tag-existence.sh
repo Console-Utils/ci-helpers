@@ -6,8 +6,8 @@
 # Assumptions:
 # - HEAD is now at merge commit created by pull request
 
-declare -ir success="0"
-declare -ir no_tag_error="1"
+declare -ir success=0
+declare -ir no_tag_error=1
 
 git checkout HEAD^2
 
