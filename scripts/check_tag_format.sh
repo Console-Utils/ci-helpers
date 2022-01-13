@@ -7,11 +7,11 @@ declare tag="$1"
 declare versioning="$2"
 
 case "$versioning" in
-  semantic)
-    declare pattern='v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+'
+    semantic)
+        declare pattern='v[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+'
     ;;
-  *)
-    declare pattern='v[[:digit:]]+\.[[:digit:]]+'
+    *)
+        declare pattern='v[[:digit:]]+\.[[:digit:]]+'
     ;;
 esac
 
