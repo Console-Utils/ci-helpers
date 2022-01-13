@@ -29,10 +29,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: check tag input
       run: |
-        declare pattern='v[[:digit:]]+.[[:digit:]]+'
-        if [[ ${{ inputs.is_semantic_versioning }} == false ]]; then
-          pattern+='.[[:digit:]]+'
+        declare pattern=v[[:digit:]]+\.[[:digit:]]+
+        if [[ ${{ inputs.is_semantic_versioning }} == true ]]; then
+          pattern+=\.[[:digit:]]+
         fi
+
+        pattern=^$pattern\$
+
         [[ '${{ inputs.tag }}' =~ $pattern ]]
 
     - name: publish
