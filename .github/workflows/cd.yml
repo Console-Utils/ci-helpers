@@ -21,6 +21,11 @@ on:
         type: string
         required: false
         default: semantic
+      script_path:
+        description: Specify which script path use for a repository
+        type: string
+        required: false
+        default: ci-helpers
 
 jobs:
   check-mergeability:
@@ -31,7 +36,7 @@ jobs:
       with:
         submodules: true
     - name: check tag input
-      run: bash scripts/check_tag_format.sh ${{ inputs.tag }} ${{ inputs.versioning }}
+      run: bash "${{ inputs.script_path }}/scripts/check_tag_format.sh" "${{ inputs.tag }}" "${{ inputs.versioning }}"
     - name: publish
       if: inputs.publish == true && success()
       uses: ncipollo/release-action@v1.9.0
