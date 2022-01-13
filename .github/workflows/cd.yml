@@ -1,0 +1,45 @@
+name: Continuous Delivery
+on:
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      publish:
+        type: boolean
+        required: true
+      pattern:
+        type: string
+        required: false
+        default: "*"
+      tag:
+        type: string
+        required: false
+        default: "v1.0"
+      is_semantic_versioning:
+        type: boolean
+        required: false
+        default: true
+
+jobs:
+  check-mergeability:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: check tag input
+      run: |
+        declare pattern='v[[:digit:]]+.[[:digit:]]+'
+        if [[ ${{ inputs.is_semantic_versioning }} == false ]]; then
+          pattern+='.[[:digit:]]+'
+        fi
+        [[ '${{ inputs.tag }}' =~ $pattern ]]
+
+    - name: publish
+      if: inputs.publish == true && success()
+      uses: ncipollo/release-action@v1.9
+      with:
+        artifacts: ${{ inputs.pattern }}
+        bodyFile: README.md
+        tag: ${{ inputs.pattern }}
+        token: ${{ secrets.GITHUB_TOKEN }}
