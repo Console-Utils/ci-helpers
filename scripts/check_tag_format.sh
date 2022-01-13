@@ -16,8 +16,8 @@ case "$versioning" in
 esac
 
 if [[ "$tag" =~ $pattern ]]; then
-  echo "✅ Tag is correct."
-  exit $success
+    echo "✅ Tag is correct."
+    exit $success
 fi
 
 echo "⛔ Release tag must have $versioning versioning format, but now it is '$tag'."
