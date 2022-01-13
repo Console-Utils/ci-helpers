@@ -1,25 +1,26 @@
-name: Continuous Delivery
+name: Continuous Delivery Template
 on:
-  push:
-    branches: [ main, master ]
-  workflow_dispatch:
   workflow_call:
     inputs:
       publish:
+        description: Specify whether publish a release
         type: boolean
         required: true
       pattern:
+        description: Specify which files include in a release via globs
         type: string
         required: false
         default: "*"
       tag:
+        description: Specify which tag use for a release
         type: string
         required: false
         default: "v1.0"
-      is_semantic_versioning:
-        type: boolean
+      versioning:
+        description: Specify which versioning type use for a repository
+        type: string
         required: false
-        default: true
+        default: semantic
 
 jobs:
   check-mergeability:
@@ -28,16 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: check tag input
-      run: |
-        declare pattern=v[[:digit:]]+\.[[:digit:]]+
-        if [[ ${{ inputs.is_semantic_versioning }} == true ]]; then
-          pattern+=\.[[:digit:]]+
-        fi
-
-        pattern=^$pattern\$
-
-        [[ '${{ inputs.tag }}' =~ $pattern ]]
-
+      run: bash scripts/check_tag_format.sh ${{ inputs.tag }} ${{ inputs.versioning }}
     - name: publish
       if: inputs.publish == true && success()
       uses: ncipollo/release-action@v1.9.0
