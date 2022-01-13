@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# Check whether futher CI jobs can be run by mandating:
-# - only feature/bugfix branches merged to main/master
+# Syntax: check-mergeability
+
+# Check whether branch is feature/bugfix and is merged to main/master
 
 # shellcheck disable=SC2155
 
