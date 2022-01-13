@@ -1,6 +1,6 @@
 name: Continuous Delivery
 on:
-  pull_request:
+  push:
     branches: [ main, master ]
   workflow_dispatch:
   workflow_call:
@@ -37,7 +37,7 @@ jobs:
 
     - name: publish
       if: inputs.publish == true && success()
-      uses: ncipollo/release-action@v1.9
+      uses: ncipollo/release-action@v1.9.0
       with:
         artifacts: ${{ inputs.pattern }}
         bodyFile: README.md
