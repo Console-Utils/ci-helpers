@@ -44,5 +44,5 @@ jobs:
       with:
         artifacts: ${{ inputs.pattern }}
         bodyFile: README.md
-        tag: ${{ inputs.pattern }}
+        tag: ${{ inputs.tag }}
         token: ${{ secrets.GITHUB_TOKEN }}
