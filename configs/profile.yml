@@ -22,5 +22,6 @@ no-emphasis-as-heading:
 
 required-headings:
   headings:
+    - "*"
     - "## How to email me about project problems?"
     - "## What does organization site contain?"
