@@ -1,0 +1,23 @@
+# This config must be used for all .github organization repos containing profile/README.
+
+no-hard-tabs:
+  spaces_per_tab: 2
+
+line-length:
+  line_length: 200
+  heading_line_length: 40
+  code_block_line_length: 80
+
+no-duplicate-heading:
+  siblings_only: true
+
+no-trailing-punctuation:
+  punctuation: ".,;:!"
+
+no-emphasis-as-heading:
+  punctuation: ".,;:!"
+
+required-headings:
+  headings:
+    - "## How to email me about project problems?"
+    - "## What does organization site contain?"
