@@ -1,5 +1,8 @@
 # This config must be used for all .github organization repos containing profile/README.
 
+first-line-heading:
+  level: 2
+
 no-hard-tabs:
   spaces_per_tab: 2
 
@@ -19,5 +22,6 @@ no-emphasis-as-heading:
 
 required-headings:
   headings:
+    - "*"
     - "## How to email me about project problems?"
     - "## What does organization site contain?"
