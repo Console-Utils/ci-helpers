@@ -1,12 +1,12 @@
-extends: default
+extends: "default"
 
 rules:
   comments:
     min-spaces-from-content: 1
-  comments-indentation: enable
-  document-start: disable
-  document-end: disable
-  empty-values: enable
+  comments-indentation: "enable"
+  document-start: "disable"
+  document-end: "disable"
+  empty-values: "enable"
   indentation:
     spaces: 2
     check-multi-line-strings: true
@@ -14,4 +14,4 @@ rules:
     forbid-implicit-octal: true
     forbid-explicit-octal: true
   quoted-strings:
-    quote-type: double
+    quote-type: "double"
