@@ -10,7 +10,7 @@ declare files=("${@:1}")
 
 declare -i error_count=0
 for file in "${files[@]}"; do
-    echo "Linting $file:"
+    echo "⌛ Linting '$file'..."
     yamllint --strict --config-file "$config" "$file" || error_count+=1
 done
 

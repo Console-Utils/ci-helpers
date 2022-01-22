@@ -47,5 +47,5 @@ jobs:
       run: |
         shopt -s globstar
         sudo apt install yamllint
-        bash scripts/yamllint.sh **/*.yml
+        bash scripts/yamllint.sh configs/yamllint.yml **/*.yml
 
