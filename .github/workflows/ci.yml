@@ -47,7 +47,5 @@ jobs:
       run: |
         shopt -s globstar
         sudo apt install yamllint
-        for file in **/*.yml; do
-          echo "Linting $file:"
-          bash scripts/yamllint.sh --config-file configs/yamllint.yml "$file"
-        done
+        bash scripts/yamllint.sh **/*.yml
+
