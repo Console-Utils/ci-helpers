@@ -47,4 +47,4 @@ jobs:
       run: |
         shopt -s globstar
         sudo apt install yamllint
-        yamllint --strict --config-file configs/yamllint.yml **/*.yml
+        yamllint --strict --format parsable --config-file configs/yamllint.yml **/*.yml
