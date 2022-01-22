@@ -34,3 +34,14 @@ jobs:
         shopt -s globstar
         npm install --global markdownlint-cli
         markdownlint --config configs/config.yml **/*.md
+
+  yaml-lint:
+    runs-on: ubuntu-20.04
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: lint
+      run: |
+        shopt -s globstar
+        sudo apt install yamllint
+        bash scripts/yamllint.sh --config-file configs/yamllint.yml **/*.yml
