@@ -15,6 +15,7 @@ jobs:
         bash scripts/github_flow/check_mergeability.sh
 
   shell-lint:
+    needs: check-mergeability
     runs-on: ubuntu-20.04
     
     steps:
@@ -25,6 +26,7 @@ jobs:
         shellcheck **/*.sh
 
   markdown-lint:
+    needs: check-mergeability
     runs-on: ubuntu-20.04
     
     steps:
@@ -36,6 +38,7 @@ jobs:
         markdownlint --config configs/config.yml **/*.md
 
   yaml-lint:
+    needs: check-mergeability
     runs-on: ubuntu-20.04
     
     steps:
