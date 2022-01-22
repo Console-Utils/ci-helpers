@@ -1,0 +1,17 @@
+extends: default
+
+rules:
+  comments:
+    min-spaces-from-content: 1
+  comments-indentation: enable
+  document-end: disable
+  empty-values: enable
+  indentation:
+    spaces: 2
+    check-multi-line-strings: true
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
+  quoted-strings:
+    quote-type: double
+    required: only-when-needed
