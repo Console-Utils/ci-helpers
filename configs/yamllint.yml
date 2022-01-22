@@ -4,6 +4,7 @@ rules:
   comments:
     min-spaces-from-content: 1
   comments-indentation: enable
+  document-start: disable
   document-end: disable
   empty-values: enable
   indentation:
