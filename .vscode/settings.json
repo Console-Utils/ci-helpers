@@ -1,0 +1,10 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/yamllint.json": "configs/yamllint.yml",
+        "https://json.schemastore.org/markdownlint.json": [
+            "configs/config.yml",
+            "configs/executable.yml",
+            "configs/profile.yml"
+        ]
+    }
+}

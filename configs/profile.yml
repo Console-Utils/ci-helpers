@@ -1,4 +1,5 @@
-# This config must be used for all .github organization repos containing profile/README.
+# This config must be used for all .github organization repos containing
+# profile/README.
 
 first-line-heading:
   level: 2
