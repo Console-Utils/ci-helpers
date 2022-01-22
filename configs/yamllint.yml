@@ -15,4 +15,3 @@ rules:
     forbid-explicit-octal: true
   quoted-strings:
     quote-type: double
-    required: only-when-needed
