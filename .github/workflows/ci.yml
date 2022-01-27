@@ -45,6 +45,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: lint
       run: |
+        pip install --user yamllint
         shopt -s globstar
-        sudo apt install yamllint
         yamllint --strict --format parsable --config-file configs/yamllint.yml **/*.yml
