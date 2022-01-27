@@ -17,3 +17,4 @@ rules:
     quote-type: "double"
   line-length:
     allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: true
